@@ -33,6 +33,10 @@
         noEmit: 编译依然进行，但不生成编译后的文件，默认false
         noEmitOnError: 当有错误的时候不生成编译的文件，默认false
         alwaysStrict: 设置编译后的文件是否使用严格模式，默认false
+        noImplicitAny: 不允许使用隐式的any，默认为false
+        noImplicitThis: 不允许不明确类似的this，默认为false
+        strictNullChecks: 严格的检查空值，默认为false
+        strict: 所有的严格检查的总开关，true即全打开，false全关闭
 */
 {
   // "include": [
@@ -51,6 +55,10 @@
     "removeComments": false,
     "noEmit": false,
     "noEmitOnError": false,
-    "alwaysStrict": false
+    "alwaysStrict": false,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "strict": false
   }
 }
