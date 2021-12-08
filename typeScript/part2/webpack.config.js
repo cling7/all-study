@@ -1,7 +1,10 @@
 const path = require('path')
+// 引入webpackplugin插件
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+// 引入clean插件
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
-
   entry:'./src/index.ts',
   output:{
     // 指定打包后的目录
@@ -21,5 +24,17 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  plugins:[
+    new HTMLWebpackPlugin({
+      title:'自定义的title',
+      template:'./src/index.html'
+    }),
+    new CleanWebpackPlugin()
+  ],
+
+  // 用来设置引用模块
+  resolve:{
+    extensions:['.ts','.js']
   }
 }
