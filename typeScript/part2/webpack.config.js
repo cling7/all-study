@@ -19,7 +19,34 @@ module.exports = {
         // 指定规则生效的文件
         test: /\.ts$/,
         // 指定使用的loader
-        use:"ts-loader",
+        use:[
+          // 配置babel
+          {
+            loader:'babel-loader',
+            // 配置
+            options:{
+              // 设置预定义的环境
+              presets:[
+                [
+                  // 指定环境的插件
+                  '@babel/preset-env',
+                  // 配置信息
+                  {
+                    // 要兼容的目标浏览器
+                    targets:{
+                      'chrome':'88'
+                    },
+                    // 使用哪个版本的corejs
+                    "corejs":"3",
+                    // 使用corejs的方式 usage表示按需加载
+                    "useBuiltIns":'usage'
+                  }
+                ]
+              ]
+            }
+          },
+          "ts-loader"
+        ],
         // 要排除的文件
         exclude: /node_modules/
       }
