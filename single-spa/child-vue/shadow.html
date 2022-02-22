@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>你好</p>
+  <div id="shadow"></div>
+  <script>
+    let shadowDom = shadow.attachShadow({mode:'closed'}) 
+    const pEle = document.createElement('p')
+    pEle.innerHTML = '不好'
+    let styleEle = document.createElement('style')
+    styleEle.textContent = `
+      p{color:red}
+    `
+    shadowDom.appendChild(styleEle)
+    shadowDom.appendChild(pEle)
+  </script>
+</body>
+</html>
