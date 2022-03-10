@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    vue应用
+    <el-menu :router="true" mode="horizontal">
+      <!-- 基座中可以放自己的路由应用 -->
+      <el-menu-item index="/">Home</el-menu-item>
+      <!-- 引用其他子应用 -->
+      <el-menu-item index="/vue">vue应用</el-menu-item>
+    </el-menu>
+    <!-- vue应用挂载处 -->
+    <div id="vue"></div>
+    <router-view/>
   </div>
 </template>
-<script>
-
-</script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
